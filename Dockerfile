@@ -1,5 +1,5 @@
 FROM ubuntu
-RUN apt-get update && apt-get install -y curl
+RUN apt-get update && apt-get install -y curl git wget
 ENV VER="17.03.0-ce"
 RUN set -xe; \
     curl -L -o "/tmp/docker-$VER.tgz" "https://get.docker.com/builds/Linux/x86_64/docker-$VER.tgz"; \
