@@ -1,5 +1,5 @@
 FROM ubuntu
-RUN apt-get update && apt-get install -y curl git wget
+RUN apt-get update && apt-get install -y curl git wget python python-pip
 ENV VER="17.03.0-ce"
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN set -xe; \
@@ -15,3 +15,5 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh
     && npm install -g yarn \
     && yarn global add hc-cog \
     && yarn global add gulp-cli grunt-cli
+RUN pip install awscli --upgrade --user
+ENV PATH="/root/.local/bin:${PATH}"
