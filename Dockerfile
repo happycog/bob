@@ -1,5 +1,5 @@
 FROM ubuntu
-RUN apt-get update && apt-get install -y curl git wget python python-pip
+RUN apt-get update && apt-get install -y curl git wget python python-pip rsync
 ENV VER="17.03.0-ce"
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN set -xe; \
